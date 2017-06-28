@@ -138,3 +138,33 @@ A familiar looking DevTools window should pop up.
 
 <img width="1280" alt="screen shot 2017-06-28 at 12 32 31 pm" src="https://user-images.githubusercontent.com/1636964/27648948-36adcaa4-5bfe-11e7-81a5-62e44ea45c06.png">
 
+These buttons are the step over, step into, and step out actions I described earlier.
+
+<img width="227" alt="screen shot 2017-06-28 at 12 38 53 pm" src="https://user-images.githubusercontent.com/1636964/27649108-c81d3bdc-5bfe-11e7-9b1f-cbcbe593d123.png">
+
+Let's step into the function until we reach line 7.
+
+The Chrome debugger won't show the variable in local scope either, but you can navigate the call stack to examine different scopes.
+
+![debug](https://user-images.githubusercontent.com/1636964/27649656-6a45088a-5c00-11e7-817d-f588585928f7.gif)
+
+Some IDE's also support Node debugging. I personally use Visual Studio Code. Here's a configuration that should _just work_ for most Node scripts similar to the example file.
+
+```
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "node",
+            "request": "attach",
+            "name": "Attach debugger",
+            "port": 9229,
+            "protocol": "inspector"
+        }
+    ]
+}
+```
+
+Here's what the debugging interface looks like.
+
+<img width="1280" alt="screen shot 2017-06-28 at 12 59 38 pm" src="https://user-images.githubusercontent.com/1636964/27650087-dcea434a-5c01-11e7-8d5e-642ddee10b80.png">
